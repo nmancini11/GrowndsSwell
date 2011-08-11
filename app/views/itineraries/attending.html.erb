@@ -1,0 +1,9 @@
+<body>
+
+<%= stylesheet_link_tag 'invite', :media => 'screen' %>
+
+<% @plans_made.each do |plan| %>
+	<%= User.find(plan.child_id).name %><br />
+<% end %>
+
+</body>

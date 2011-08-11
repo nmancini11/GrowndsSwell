@@ -1,0 +1,19 @@
+<body>
+
+<%= stylesheet_link_tag 'invite', :media => 'screen' %>
+
+<h2><%= @venue.name %></h2>
+<h3><%= @venue.street_address_1 %> <%= @venue.city %>, <%= @venue.state %></h3>
+<% if @venue.on_foursquare? %>
+	<% @foursquare_venue.categories.each do |category| %>
+		<%= image_tag(category.icon, :size => "30x30", :alt => category.name) %>
+		<% end %>
+<% end %>
+<br />
+<br />
+
+<h4>Friends that have attended in the past week:</h4>
+<% @users.each do |user| %>
+	<%= User.find(user.child_id).name %>
+<% end %>
+</body>

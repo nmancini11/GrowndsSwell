@@ -1,0 +1,232 @@
+<div id="Content_Spacer">&nbsp</div><!-- end Content_Spacer div-->
+
+<div id="User_Bar">
+	
+	<div id="Profile_Pic">
+		<% if current_user.on_foursquare? %>
+		<p><%= image_tag(@client.users.find(current_user.authentications[0].uid).photo, :size => "100x100")%></p>
+		<% end %>
+	</div><!-- end Venue_Icon div-->
+	
+	<div id="User_Info">
+		<% unless current_user.on_growndswell? %>
+		<h1><%= @client.users.find(current_user.authentications[0].uid).name %></h1>
+		<% else %>
+		<h1><%= current_user.name %></h1>
+		<% end %>
+		<h3>Syracuse University</h3>
+	</div><!-- end Venue_Info-->
+	
+	<div id="Activity_Info">
+		<h2>So what's the plan then?</h2>
+	</div><!-- end Activity_Info-->	
+	
+	<div id="Social_Activity">
+		<%= link_to image_tag("/images/Going_Out.png"), new_itinerary_path, :class => "iframe", :id => "makeplans" %>
+		<%= link_to image_tag("/images/Staying_In.png"), new_itinerary_path, :class => "iframe", :id => "makeplans" %>
+		<%= link_to image_tag("/images/Studying.png"), new_itinerary_path, :class => "iframe", :id => "makeplans" %>	
+	</div><!-- end Social_Activity div-->
+
+	<div id="CurrentAgenda">
+		<div id="Agenda_Title">
+			<h2>Agenda</h2>
+		</div><!-- end Class_Titlediv-->
+
+		<div id="Agenda">
+			<a href="javascript:void(0)" onclick =	"document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">Bird Library</a>
+			<p>@ 6PM</p>
+			<div id="Agenda_Icon">
+				<img src="images/Studying_Sidebar_Icon.png">
+			</div><!-- end Agenda_Icon div-->
+		</div><!-- end Class div-->
+
+		<div id="Agenda">
+			<a href="javascript:void(0)" onclick =	"document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">The Office</a>
+			<p>@ 8PM</p>
+			<div id="Agenda_Icon">
+				<img src="images/StayingIn_Sidebar_Icon.png">
+			</div><!-- end Agenda_Icon div-->
+		</div><!-- end Class div-->
+		
+		<div id="Agenda">
+			<a href="javascript:void(0)" onclick =	"document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">Lucy's Bar'</a>
+			<p>@ 12AM</p>
+			<div id="Agenda_Icon">
+				<img src="images/GoingOut_Sidebar_Icon.png">
+			</div><!-- end Agenda_Icon div-->
+		</div><!-- end Agenda div-->
+	</div><!-- end CurrentAgenda div-->
+
+<div id="Classes">
+	<div id="Class_Title">
+		<h2>Classes</h2>
+	</div><!-- end Class_Titlediv-->
+	
+	<div id="Class">
+		<center><a href="#">IDK 256</a></center>
+	</div><!-- end Class div-->
+	
+	<div id="Class">
+		<center><a href="#">LOL 101</a></center>	
+	</div><!-- end Class div-->
+	
+	<div id="Class">
+		<center><a href="#">BRB 242</a></center>
+	</div><!-- end Class div-->
+	
+	<div id="Class">
+		<center><a href="#">WTF 285</a></center>
+	</div><!-- end Class div-->
+	
+	<div id="Class">
+		<center><a href="#">WTF 386</a></center>	
+	</div><!-- end Class div-->	
+	
+	<div id="Class">
+		<center><a href="#">ADD</a></center>
+	</div><!-- end Class div-->
+	
+</div><!-- end Classesdiv-->
+
+</div><!-- end User_Bar div-->
+
+<div id="Left_Spacer">&nbsp</div><!-- end Left_Spacer div-->
+
+<div id="Search_Bar">
+	<% form_tag users_path, :method => :get do %>
+		<%= text_field_tag :term, params[:term], :id => "search-text", :size => 120 %>
+	<% end %>
+</div>
+
+<div id="Search_Spacer">&nbsp</div><!-- end Left_Spacer div-->
+
+
+
+<div id="News">
+	<div id="NewsFeed">
+		<h1>NewsFeed</h1>
+	</div><!-- end NewsFeed div-->
+
+<% @feed_items.each do |event| %>
+<!-- *****STATUS UPDATE***** -->
+	<div id="Event_Info">
+		<div id="User_Profile_Picture">
+			<a href="#"><img src="images/Profile_Pic1.png"></a>
+		</div>
+		
+		<div id="User_Status">
+			<p><a href="#"><b><%= User.find(event.original.parent_id).name %></b></a> is <b>Going Out</b> to <a href="#"><b>
+			<% if Venue.find(event.venue_id).on_foursquare? %>
+				<% venue = @client.venues.find(Venue.find(event.venue_id).fsvid) %>
+				<%= link_to venue.name, venue_show_to_user_path(Venue.where(:fsvid => venue.id)[0]), :class => "iframe", :id => "venue" %>
+			<% else %>
+				<%= link_to Venue.find(event.venue_id).business.name, venue_show_to_user_path(Venue.find(event.venue_id)), :class => "iframe", :id => "venue" %>
+			<% end %></b></a></p>
+		</div>
+	
+		<div id="Interaction_Icons">
+			<% if current_user.itineraries.include?(event) %>
+				<%= link_to image_tag("/images/Add_Icon2.png"), new_itinerary_invite_path(event), :class => "iframe", :id => "invite"  %>
+			<% else %>
+				<%= link_to image_tag("/images/Add_Icon.png"), itinerary_join_path(event.id, event.original.parent_id) %>
+			<% end %>
+			<a href="#"><img src="images/Message_Icon.png"></a>
+		</div>
+		
+		
+		<div id="Activity_Icon">
+			<img src="images/GoingOut_Icon.png">
+		</div>
+		
+		<div id="User_Message">
+			<p><%= event.summary %></p>
+		</div>
+		
+		<div id="User_Time">
+			<p><b><%= event.start_date.strftime("%m/%d @ %I:%M") %><b></p>
+		</div>
+	</div>
+	
+	<div id="Interaction_Icons2">
+		<a href="#"><img src="images/Add_Icon1.png"></a>
+		<a href="#"><img src="images/Message_Icon1.png"></a>
+	</div>
+	
+	<!-- *****STATUS UPDATE***** -->
+<% end%>
+
+</div><!-- end News div-->	
+
+<div id="Content_Spacer">&nbsp</div><!-- end Content_Spacer div-->
+
+
+
+
+				
+				<% @feed_items.each do |event| %>
+				
+				<% if event.start_date > Time.now %>
+				<div class="post">
+				<% else %>
+				<div class="post" id ="old">
+				<% end %>
+					<p class="meta"><%= User.find(event.original.parent_id).name %> on 
+						<span class="date"><%= event.start_date.strftime("%A at %I:%M") %></span>
+						<% num_people = Plan.where(:itinerary_id => event.id) %>
+						<% if num_people.size > 1 %>
+							with <font size=+2><%= link_to num_people.size-1, itinerary_attending_path(event), :class => "iframe", :id => "attending" %></font> other
+							<% if num_people.size-1 != 1 %>
+								people
+							<% else %>
+								person
+							<% end %>
+						<% end %>
+						
+						
+						<br />
+						<% if current_user.itineraries.include?(event) && current_user.id == event.original.parent_id %>
+						[ <%= link_to 'edit', edit_itinerary_path(event) %> ]
+						<% if event.start_date > Time.now %>
+						[ <%= link_to 'invite', new_itinerary_invite_path(event), :class => "invite"  %> ]
+						<% end %> 
+						<% elsif current_user.itineraries.include?(event) && event.start_date > Time.now %>
+						[ <%= link_to 'invite', new_itinerary_invite_path(event), :class => "invite"  %> ] 
+						<% end %>
+					</p>
+					<h2 class="title">						
+						<% if Venue.find(event.venue_id).on_foursquare? %>
+							<% venue = @client.venues.find(Venue.find(event.venue_id).fsvid) %>
+							
+							<%= link_to venue.name, venue_show_to_user_path(Venue.where(:fsvid => venue.id)[0]), :class => "iframe", :id => "venue" %>
+							
+							<% venue.categories.each do |category| %>
+								<%= image_tag(category.icon, :size => "15x15", :alt => category.name) %>
+							<% end %>
+						<% else %>
+							<%= link_to Venue.find(event.venue_id).business.name, venue_show_to_user_path(Venue.find(event.venue_id)), :class => "iframe", :id => "venue" %>
+						<% end %>
+						
+						<% if event.start_date > Time.now && current_user.plans.where(:itinerary_id => event.id).empty? %>
+							<div class="join"><%= link_to '+', itinerary_join_path(event.id, event.original.parent_id) %></div>
+						<% elsif current_user.plans.where('itinerary_id = ? AND parent_id <> ?', event.id, current_user.id).empty? %>
+						<% elsif event.start_date > Time.now %>
+							<div class="join"><%= link_to '-', itinerary_unjoin_path(event.id, event.original.parent_id) %></div>
+						<% end %>
+						
+					</h2>
+					<div class="entry">
+						<p><%= event.summary %></p>
+					</div>
+					
+				</div>
+				<% end%>
+				
+			</div>
+		</div>
+	</div>
+	<!-- end #content -->
+	
+		
+	</div>
+	<div style="clear: both;">&nbsp;</div>
+	

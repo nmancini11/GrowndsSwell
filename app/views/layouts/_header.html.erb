@@ -1,0 +1,33 @@
+
+			<% if business_signed_in? %>
+			<div id ="Header">
+
+				<div id="Logo">
+					<a href="#"><img src="/images/GrowndSwell.png"></a>
+				</div><!-- end Logo Div-->
+
+				<div id="Header_Spacer">&nbsp</div><!-- end Header_Spacer Div-->
+
+				<div id="Header_Nav">
+					    <ul>
+				            <li>
+								<%= link_to "Home", venues_path %>
+				            </li>
+							<li>
+								<%= link_to "About", '#' %>
+				            </li>
+							<li>
+								<%= link_to "Account", edit_business_registration_path %>
+				            </li>
+							<li>
+								<%= link_to "Sign Out", destroy_business_session_path, :method => :delete %>
+				            </li>
+							<li>
+								<%= link_to "Support", '#' %>
+				            </li>
+				        </ul>
+				    </div><!--end Header_Nav div-->
+				</div><!--end Header Div-->	
+
+				<div id="Content_Spacer">&nbsp</div><!-- end Content_Spacer div-->
+			<% end %>

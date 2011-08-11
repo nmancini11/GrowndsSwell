@@ -1,0 +1,9 @@
+class AddUserIdToItineraries < ActiveRecord::Migration
+  def self.up
+    add_column :itineraries, :user_id, :integer
+  end
+
+  def self.down
+    remove_column :itineraries, :user_id
+  end
+end

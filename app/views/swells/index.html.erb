@@ -1,0 +1,143 @@
+<div id="Venue_Stats">
+	
+	<div id="Venue_Icon">
+		<img src="/images/Venue_Icon.png">
+	</div><!-- end Venue_Icon div-->
+	
+	<div id="Venue_Info">
+		<h1><%= @venue.name %></h1></br>
+		<h3><%= @venue.street_address_1 %></br>
+		<%= @venue.city %>, <%= @venue.state %> <%= @venue.zip %></h3>
+	</div><!-- end Venue_Info-->
+	
+	<div id="Venue_Figures">
+		
+		<div id="Total_Checkins">
+			<center><h3>Total Check-ins</h3></center>
+			<center><h2>45</h2></center>
+		</div><!-- end Total_Checkins div-->
+		
+		<div id="Total_Checkins">
+			<center><h3>Swells Used</h3></center>
+			<center><h2>45</h2></center>
+		</div><!-- end Total_Checkins div-->
+		
+		<div id="Total_Checkins">
+			<center><h3>New Visitors</h3></center>
+			<center><h2>45</h2></center>
+		</div><!-- end Total_Checkins div-->
+		
+		<div id="Total_Checkins">
+			<center><h3>Users Here</h3>
+			<center><h2>45</h2></center>	
+		</div><!-- end Total_Checkins div-->
+		
+	</div><!-- end Venue_Figures div-->
+</div><!-- end Venue_Stats div-->
+
+<div id="Content_Spacer">&nbsp</div><!-- end Content_Spacer div-->
+
+<div id="Locations">
+	<div id="Alternate_Locations">
+		<h2>Alternate Locations</h2>
+	</div><!-- end Alternate_Locations div-->
+	<% @other_venues.each do |venue| %>
+		<div id="Location">
+			<h2><%= link_to venue.name, venue_swells_path(venue.id) %></h2>
+		</div><!-- end Alternate_Locations div-->
+	<% end %>
+</div><!-- end Locations div-->
+
+	<div id="Left_Spacer">&nbsp</div><!-- end Left_Spacer div-->
+	
+	<div id="Swells">
+		<div id="New_Swell">
+			<h1>Swells</h1>
+			<%= render 'form' %>
+		
+		
+	</div><!-- end New_Swells div-->	
+	
+	<div id="Content_Spacer">&nbsp</div><!-- end Content_Spacer div-->
+
+	<div id="Swells">
+		<div id="New_Swell">
+			<h1>Previous Swells</h1>
+			<% @swells.each do |swell| %>
+			
+			<div id="Swell_Info">
+				<p><%= link_to swell.name, swell %>
+				<br />
+				Start date: <%= swell.start_date %><br />
+				End date: <%= swell.end_date %><br />
+				Swell Limit: <%= swell.limit %><br />
+			</div><!-- end Swell_Info div-->
+			<% end %>
+
+			<div id="Swell_Description">
+				
+			</div><!-- end Swell_Desciption div-->
+		</div><!-- end New_Swells div-->
+	</div><!-- end New_Swells div-->
+
+</div><!-- end New_Swells div-->
+	</div><!-- end Swells div-->
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="article">
+	<h2 class="title"><%= @venue.name %></h2>
+	<div class="content">
+
+<table>
+	<tr>
+		
+	<td width = 60%>
+	<table>
+<% @swells.each do |swell| %>
+  <tr>
+    <td><h2><%= link_to swell.name, swell %></h2><br />
+    <b>Info: </b><%= swell.deal_info %><br />
+    <b>Start Date: </b><%= swell.start_date %><br />
+    <b>End Date: </b><%= swell.end_date %><br />
+    <b>Radius: </b><%= swell.radius %><br />
+    <b>Limit: </b><%= swell.limit %><br />
+    <td><%= link_to 'Edit', edit_swell_path(swell) %></td>
+  </tr>
+<% end %>
+</table>
+</td>
+<td width=40%>
+<h4>Total Check-ins</h4>
+graph here
+
+<h4>Total Swells</h4>
+not a graph
+
+<h4>Peak Hours</h4>
+line graph here
+
+<h4>Inviters</h4>
+bar graph here
+show top 5 inviters and compare their graphs
+</td>
+</table>
+
+</div>
+<div class="footer">
+	<div class="comments">
+
+<%= link_to 'New Swell', new_venue_swell_path %>
+
+		</div>
+	</div>
+</div>

@@ -1,0 +1,19 @@
+<body onload="load()">
+
+<%= stylesheet_link_tag 'invite', :media => 'screen' %>
+
+<% unless notice.nil? %>
+	<p id="notice"><%= notice %></p>
+<% end %>
+<% unless alert.nil? %>
+	<p id="alert"><%= alert %></p>
+<% end %>
+
+<script type="text/javascript">
+function load()
+{
+setTimeout("parent.$.fancybox.close",600);
+}
+</script>
+
+</body>

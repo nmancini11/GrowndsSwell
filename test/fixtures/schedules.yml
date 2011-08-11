@@ -1,0 +1,33 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  monday_open: 2011-07-06 10:18:04
+  monday_close: 2011-07-06 10:18:04
+  tuesday_open: 2011-07-06 10:18:04
+  tuesday_close: 2011-07-06 10:18:04
+  wednesday_open: 2011-07-06 10:18:04
+  wednesday_close: 2011-07-06 10:18:04
+  thursday_open: 2011-07-06 10:18:04
+  thursday_close: 2011-07-06 10:18:04
+  friday_open: 2011-07-06 10:18:04
+  friday_close: 2011-07-06 10:18:04
+  saturday_open: 2011-07-06 10:18:04
+  saturday_close: 2011-07-06 10:18:04
+  sunday_open: 2011-07-06 10:18:04
+  sunday_close: 2011-07-06 10:18:04
+
+two:
+  monday_open: 2011-07-06 10:18:04
+  monday_close: 2011-07-06 10:18:04
+  tuesday_open: 2011-07-06 10:18:04
+  tuesday_close: 2011-07-06 10:18:04
+  wednesday_open: 2011-07-06 10:18:04
+  wednesday_close: 2011-07-06 10:18:04
+  thursday_open: 2011-07-06 10:18:04
+  thursday_close: 2011-07-06 10:18:04
+  friday_open: 2011-07-06 10:18:04
+  friday_close: 2011-07-06 10:18:04
+  saturday_open: 2011-07-06 10:18:04
+  saturday_close: 2011-07-06 10:18:04
+  sunday_open: 2011-07-06 10:18:04
+  sunday_close: 2011-07-06 10:18:04

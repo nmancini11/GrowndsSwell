@@ -1,0 +1,37 @@
+<div id="page">
+	<div id="content">
+		<div id="content-bgtop">
+			<div id="content-bgbtm">
+
+<h2>Sign in</h2>
+
+<%= link_to image_tag('/images/foursquare/signinwith.png'), '/auth/foursquare' %>
+<br />
+<br />
+
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <p><%= f.label :email %><br />
+  <%= f.email_field :email %></p>
+
+  <p><%= f.label :password %><br />
+  <%= f.password_field :password %></p>
+
+  <% if devise_mapping.rememberable? -%>
+    <p><%= f.check_box :remember_me %> <%= f.label :remember_me %></p>
+  <% end -%>
+
+  <p><%= f.submit "Sign in" %></p>
+<% end %>
+
+<%= render :partial => "devise/shared/links" %>
+
+			</div>
+		</div>
+	</div>
+</div>
+<div style="clear: both;">&nbsp;</div>
+<!-- end #page -->
+<div id="sidebar">
+</div>
+
+	<!-- end #content -->

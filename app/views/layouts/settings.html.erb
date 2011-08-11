@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Settings</title>
+	<%= stylesheet_link_tag 'settings' %>
+  <%= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js', :defaults, 'jquery-ui.min.js', 'jquery-ui-timepicker-addon.js', 'jquery.fancybox-1.3.4' %>
+		<meta name="generator" content="TextMate http://macromates.com/">
+		<meta name="author" content="Nick Mancini">
+  <%= csrf_meta_tag %>
+	
+</head>
+<body>
+	<div id="container">
+
+	<%= yield %>
+	</div>
+
+</body>
+</html>

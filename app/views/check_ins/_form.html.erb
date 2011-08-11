@@ -1,0 +1,41 @@
+<%= form_for(@check_in) do |f| %>
+  <% if @check_in.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@check_in.errors.count, "error") %> prohibited this check_in from being saved:</h2>
+
+      <ul>
+      <% @check_in.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :venue_id %><br />
+    <%= f.text_field :venue_id %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :in_time %><br />
+    <%= f.datetime_select :in_time %>
+  </div>
+  <div class="field">
+    <%= f.label :out_time %><br />
+    <%= f.datetime_select :out_time %>
+  </div>
+  <div class="field">
+    <%= f.label :current_event_invite_id %><br />
+    <%= f.text_field :current_event_invite_id %>
+  </div>
+  <div class="field">
+    <%= f.label :itinerary_invite_id %><br />
+    <%= f.text_field :itinerary_invite_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

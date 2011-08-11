@@ -1,0 +1,22 @@
+<br />
+<br />
+
+<div class="article">
+	<h2 class="title">New Swell</h2>
+	<div class="content">
+
+<%= render 'form' %>
+</div>
+<div class="footer">
+	<div class="comments">
+
+<% if @venue_id.nil? %>
+	<%= link_to 'Back', venues_path %>
+<% else %>
+	<%= link_to 'Back', venue_swells_path %>	
+<% end %>
+
+		</div>
+	</div>
+</div>
+

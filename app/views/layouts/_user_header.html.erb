@@ -1,0 +1,65 @@
+
+<% if user_signed_in? %>
+
+<div id ="Header">
+	
+	<div id="Logo">
+		<a href="#"><img src="/images/GrowndSwell.png"></a>
+	</div><!-- end Logo Div-->
+	
+	<div id="Header_Spacer">&nbsp</div><!-- end Header_Spacer Div-->
+	
+	<div id="Header_Nav">
+		    <ul>
+	      	<li><%= link_to "Home", itineraries_path %></li>
+					<li><%= link_to "About", '#' %></li>
+					<li><%= link_to "Profile", current_user %></li>
+					<% if current_user.on_foursquare? and not current_user.on_growndswell? %>
+						<li><%= link_to "Upgrade Account", user_upgrade_path(current_user) %></li>
+					<% elsif current_user.on_growndswell? %>
+						<li><%= link_to "Edit Account", edit_user_registration_path, :class => "settings" %></li>
+					<% end %>
+					<li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+				<li><%= link_to "Support", '#' %></li>
+	        </ul>
+	    </div><!--end Header_Nav div-->
+	</div><!--end Header Div-->
+
+
+<% unless notice.nil? %>
+	<p id="notice"><%= notice %></p>
+<% end %>
+<% unless alert.nil? %>
+	<p id="alert"><%= alert %></p>
+<% end %>
+
+<% else %>
+
+<div id="header">
+	<div id="menu">
+		<ul>
+			<li><%= link_to "Home", itineraries_path %></li>
+			<li><%= link_to "About", "#{}" %></li>
+		</ul>
+	</div>
+	<!-- end #menu -->
+	<div id="search">
+		<form method="get" action="">
+			<fieldset>
+				<input type="text" name="s" id="search-text" size="15" />
+			</fieldset>
+		</form>
+	</div>
+	<!-- end #search -->
+</div>
+<!-- end #header -->
+<!-- end #header-wrapper -->
+
+<div id="logo">
+	<h1><a href="#">GrowndSwell </a></h1>
+	<p><em>know who's going to be where</em></p>
+</div>
+<hr />
+<!-- end #logo -->
+
+<% end %>

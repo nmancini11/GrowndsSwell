@@ -1,0 +1,61 @@
+<br />
+<br />
+
+<div class="article">
+	<h2 class="title"><%= @venue.name %></h2>
+	<div class="content">
+
+<table>
+	<tr>
+		<td>
+  <b>Street address 1:</b>
+  <%= @venue.street_address_1 %>
+<br />
+  <b>Street address 2:</b>
+  <%= @venue.street_address_2 %>
+<br />
+  <b>City:</b>
+  <%= @venue.city %>
+<br />
+  <b>State:</b>
+  <%= @venue.state %>
+<br />
+  <b>Zip:</b>
+  <%= @venue.zip %>
+<br />
+  <b>Country:</b>
+  <%= @venue.country %>
+<br />
+  <b>Latitude:</b>
+  <%= @venue.latitude %>
+<br />
+  <b>Longitude:</b>
+  <%= @venue.longitude %>
+		</td>
+		<td>
+			<h2>Contact Information</h2>
+			<br />
+				<b>Name:</b>
+				<%= @contact.name %>
+				<br />
+				<b>Email Address:</b>
+				<%= @contact.email_address %>
+				<br />
+				<b>Phone Number:</b>
+				<%= @contact.phone_number %>
+		</td>
+	</tr>
+</table>
+
+</div>
+<div class="footer">
+	<div class="comments">
+
+
+<%= link_to 'Edit', edit_venue_path(@venue) %> |
+<%= link_to 'Back', venues_path %>
+
+		</div>
+	</div>
+</div>
+

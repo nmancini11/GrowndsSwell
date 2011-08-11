@@ -1,0 +1,17 @@
+<br />
+<br />
+
+<div class="article">
+	<h2 class="title">Editing <%= @swell.name %></h2>
+	<div class="content">
+<%= render 'form' %>
+</div>
+<div class="footer">
+	<div class="comments">
+
+<%= link_to 'Show', @swell %> |
+<%= link_to 'Back', venue_swells_path(@swell.venue_id) %>
+
+		</div>
+	</div>
+</div>

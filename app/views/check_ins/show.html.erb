@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Venue:</b>
+  <%= @check_in.venue_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @check_in.user_id %>
+</p>
+
+<p>
+  <b>In time:</b>
+  <%= @check_in.in_time %>
+</p>
+
+<p>
+  <b>Out time:</b>
+  <%= @check_in.out_time %>
+</p>
+
+<p>
+  <b>Current event invite:</b>
+  <%= @check_in.current_event_invite_id %>
+</p>
+
+<p>
+  <b>Itinerary invite:</b>
+  <%= @check_in.itinerary_invite_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_check_in_path(@check_in) %> |
+<%= link_to 'Back', check_ins_path %>

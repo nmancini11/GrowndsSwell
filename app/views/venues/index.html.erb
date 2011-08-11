@@ -1,0 +1,47 @@
+<%= link_to 'New Venue', new_venue_path %>&nbsp;&nbsp;
+<% if @venues.size > 0 %>
+	<%= link_to 'New Swell', new_swell_path %>
+<% end %>
+<br />
+<br />
+
+
+<% @venues.each do |venue| %>
+<div class="article">
+	<h2 class="title"><%= link_to venue.name, venue_swells_path(venue.id) %></h2>
+	<div class="byline"><%= venue.street_address_1 %>,
+		<% if not venue.street_address_2.empty? %>
+    	<%= venue.street_address_2 %>
+		<% end %>
+    <%= venue.city %>, <%= venue.state %> <%= venue.zip %>
+		</div>
+		<div class="content">
+		<table>
+			<tr>
+				<td>
+					<h3>Quick-View</h3>
+					Total Check-Ins:	1,589<br />
+					Total Swells:	34<br />
+					Check-Ins today:	53
+					
+				</td>
+				<td>
+					<h3>Recent/Active Swells</h3>
+					<% venue.swells.order('end_date DESC').limit(5).each do |swell| %>
+						<%= link_to swell.name, swell_path(swell.id) %>&nbsp;
+						<%= "[active]" if swell.active? %>
+						<%= "[expired]" unless swell.active? %><br />
+					<% end %>
+				</td>
+			</tr>
+		</table>
+		</div>
+		<div class="footer">
+			<div class="comments">
+			<%= link_to 'Show', venue %>&nbsp;|&nbsp;
+	    <%= link_to 'Edit', edit_venue_path(venue) %>&nbsp;|&nbsp;
+	    <%= link_to 'Destroy', venue, :confirm => 'Are you sure?', :method => :delete %>
+			</div>
+		</div>
+</div>
+<% end %>

@@ -1,0 +1,446 @@
+body { background-color: #EBE3D3; color: #1D1900; }
+
+body, p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size:   13px;
+  line-height: 18px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a { color: #000; }
+a:visited { color: #666; }
+a:hover { color: #fff; background-color:#55C9C9; }
+
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+/* Navigation */
+
+nav {
+  float: right;
+}
+
+nav {
+  padding: 0 0.7em;
+  white-space: nowrap;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 0.2em 0;
+}
+
+nav ul li a {
+  padding: 0 5px;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Venues */
+
+/* IDs/Classes */
+
+.article {
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	margin-bottom: 18px;
+}
+
+.article.blog {
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	margin-bottom: 64px;
+	padding-left:10px;
+	padding-right:10px;
+}
+
+.article.search {
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	margin-bottom: 20px;
+	padding-left:10px;
+	padding-right:10px;
+}
+
+.article.archive {
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	margin-bottom: 10px;
+	padding-left:10px;
+	padding-right:10px;
+}
+
+.article .byline {
+	border-left: 1px solid #909090;
+	border-right: 1px solid #909090;
+	border-bottom: 1px solid #909090;
+	background-color: #f2f1ec;
+	height: 29px;
+	line-height: 29px;
+	padding: 0 14px 0 14px;
+	overflow: none;
+	font-family: Verdana;
+#	font-style: italic;
+	font-size: 12px;
+	color: #39332e;
+}
+
+.article.blog .byline {
+	border: 0;
+	background-color: #fff;
+	margin: 4px 0 0 0;
+	height: auto;
+	line-height: normal;
+	padding: 0;
+}
+
+.article.search .byline {
+	border: 0;
+	background-color: #fff;
+	margin: 4px 0 0 0;
+	height: auto;
+	line-height: normal;
+	padding: 0;
+}
+
+.article .byline a {
+	font-family: Georgia, serif;
+	font-style: italic;
+	font-size: 13px;
+	text-decoration: underline;
+	color: #660000;
+}
+
+.article .byline .social {
+	float: right;
+}
+
+.article h2 {
+  margin-bottom:0em
+}
+
+.article .content {
+	font-size:10pt;
+	padding: 11px 18px 12px 18px;
+	border-left: 1px solid #909090;
+	border-right: 1px solid #909090;
+	background-color: #ffffff;
+}
+
+.article .content a {
+	font-size:10pt;
+	border-bottom:1px solid #ccc;
+}
+.article.blog .content {
+	border: 0;
+}
+
+.article.search .content {
+	border: 0;
+}
+
+.article.archive .content {
+	border: 0;
+}
+
+.article .content .article_image {
+	float: right;
+	padding: 12px 17px 14px 14px;
+}
+
+.article .content p {
+	padding: 11px 18px 12px 18px;
+	color: #041427;
+	font-size: 10pt;
+}
+
+.article.blog .content p {
+	padding: 11px 0 12px 0;
+        color: #152a44;
+}
+
+.article.search .content p {
+	padding: 11px 0 12px 0;
+        color: #152a44;
+}
+
+.article.archive .content p {
+	padding: 11px 0 12px 0;
+        color: #152a44;
+}
+
+.article.blog .content p.quote {
+	padding-left: 30px;
+	margin-left: 0;
+}
+
+.article.search .content p.quote {
+	padding-left: 30px;
+	margin-left: 0;
+}
+
+.article.archive .content p.quote {
+	padding-left: 30px;
+	margin-left: 0;
+}
+
+.article .content p.quote {
+	margin-left: 18px;
+	padding-left: 30px;
+	font-style: italic;
+	background: #fff url('http://cdn.macrumors.com/images-new/quote.png') 0 12px no-repeat;
+}
+
+.article .footer {
+	border-radius: 0 0 4px 4px;
+	-moz-border-radius: 0 0 4px 4px;
+	-webkit-border-radius: 0 0 4px 4px;
+	height: 33px;
+	line-height: 33px;
+	border-left: 1px solid #909090;
+	border-right: 1px solid #909090;
+	border-bottom: 1px solid #909090;
+	border-top:1px solid #909090;
+	background-color: #f2f1ec;
+}
+
+.article.blog .footer {
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	height: auto;
+	line-height: normal;
+	border: 0;
+	background-color: #fff;
+}
+
+.article.search .footer {
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	height: auto;
+	line-height: normal;
+	border: 0;
+	background-color: #fff;
+}
+
+.article .footer .comments {
+	float: left;
+	margin: 0;
+	padding: 0 0 0 21px;
+	background-image: none;
+}
+
+.article.blog .footer .comments {
+	margin: 0;
+	background-position: 0 2px;
+}
+
+.article.search .footer .comments {
+	margin: 0;
+	background-position: 0 2px;
+}
+
+.article .footer .comments a {
+	font-size: 13px;
+	color: #008;
+	text-decoration: none;
+}
+
+.article .footer .comments a {
+	color: #660000;
+}
+
+.article .footer .rating {
+	float: left;
+	margin-left: 30px;
+	font-family: Georgia, serif;
+	font-size: 13px;
+	color: #39291c;
+	text-decoration: none;
+}
+
+.article .footer .rating div.rating_title, .article .footer .rating div.pos, .article .footer .rating div.neg {
+	font-family: Georgia, serif;
+	font-size: 13px;
+	color: #39291c;
+	text-decoration: none;
+}
+
+.article .footer .rating div.rating_title {
+	float: left;
+	font-weight: bold;
+	margin-right: 10px;
+}
+
+.article .footer .rating div.pos {
+	float: left;
+	padding-right: 20px;
+	margin-right: 10px;
+	height: 33px;
+	background-image: url('http://cdn.macrumors.com/images-new/article_sprite.png');
+	background-repeat: no-repeat;
+	background-position: right -32px;
+}
+
+.article .footer .rating div.neg {
+	float: left;
+	padding-right: 20px;
+	margin-right: 10px;
+	height: 33px;
+	background-image: url('http://cdn.macrumors.com/images-new/article_sprite.png');
+	background-repeat: no-repeat;
+	background-position: right -77px;
+}
+
+.article .footer .rating strong {
+	font-family: Georgia, serif;
+	font-size: 13px;
+}
+
+.article .footer .social {
+	float: right;
+	margin: 6px 0 0 0;
+}
+
+.article.blog .footer .social {
+	float: right;
+	margin: 6px 0 0 0;
+	position:relative; top:-4px;
+}
+
+.article.iphone .footer .social {
+	float: right;
+	margin: 6px 0 0 0;
+	position:relative; top:-4px;
+}
+
+.article .searchtitle a {
+        color: #152a44;
+	font-size:15px;
+	font-weight:bold;
+}
+
+.article .title {
+	display: block;
+	background-color: #CAD700;
+	border-radius: 4px 4px 0 0;
+	-moz-border-radius: 4px 4px 0 0;
+	-webkit-border-radius: 4px 4px 0 0;
+	font-size: 1.5em;
+	color: #1D1900;
+	font-weight: bold;
+	text-decoration: none;
+	padding: 15px 15px 15px 15px;
+	overflow: none;
+	font-family: helvetica;
+}
+.article .title a {
+        color: #1D1900;
+	text-decoration:none;
+	}
+
+
+.article.blog .title {
+	height: auto;
+	line-height: normal;
+	background-color: #fff;
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-bottom: 2px solid #dfddd7;
+	font-size: 24px;
+	color: #152a44;
+	font-family: Verdana;
+	font-weight:bold;
+	padding: 0 0 3px 0;
+}
+
+.article.blog .title a {
+        color: #152a44;
+	text-decoration:none;
+}
+
+.article.search .title a {
+	height: auto;
+	line-height: normal;
+	background-color: #fff;
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+/*	border-bottom: 2px solid #dfddd7;
+*/	font-size: 12px;
+	color: #152a44;
+	font-family: Verdana;
+	font-weight:bold;
+	padding: 0 0 3px 0;
+}
+
+.article.archive .title a {
+	height: auto;
+	line-height: normal;
+	background-color: #fff;
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+/*	border-bottom: 2px solid #dfddd7;
+*/	font-size: 12px;
+	color: #152a44;
+	font-family: Verdana;
+	font-weight:bold;
+	padding: 0 0 3px 0;
+}

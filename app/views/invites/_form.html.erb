@@ -1,0 +1,32 @@
+<%= form_for(@invite) do |f| %>
+  <% if @invite.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@invite.errors.count, "error") %> prohibited this invite from being saved:</h2>
+
+      <ul>
+      <% @invite.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+    <%= f.hidden_field :itinerary_id %>
+    <%= f.hidden_field :sender_id, :value => current_user.id %>
+
+    <% for friend in @friends %>
+		<div id="Friend">
+			<%= image_tag friend.profile_pic, :size => "90x90" %>
+			<p><%= check_box_tag "invite[friend_ids][]", friend.id %><%= friend.name %></p>
+		</div>
+		<% end %>
+
+	</div><!-- end With_Friends div-->
+	
+	<div id="Spacer">&nbsp</div>
+	
+  <div class="Add_Friends">
+    <%= f.submit %>
+  </div>
+<% end %>

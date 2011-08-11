@@ -1,0 +1,41 @@
+<%= form_for(@swell) do |f| %>
+  <% if @swell.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@swell.errors.count, "error") %> prohibited this swell from being saved:</h2>
+
+      <ul>
+      <% @swell.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+		<div id="Swell_Info">
+    <%= f.label :name %>
+    <%= f.text_field :name, :value => @orig_swell.name unless @orig_swell.nil? %>
+    <%= f.text_field :name if @orig_swell.nil? %><br />
+		<%= f.label :start_date %>
+    <%= f.datetime_select :start_date %><br />
+    <%= f.label :end_date %>
+    <%= f.datetime_select :end_date %><br />
+    <%= f.label :limit %>
+    <%= f.text_field :limit, :value => @orig_swell.limit unless @orig_swell.nil? %>
+    <%= f.text_field :limit if @orig_swell.nil? %><br />
+
+		</div><!-- end Swell_Info div-->
+		
+		<div id="Swell_Description">
+			<%= f.label :deal_info %>
+	    <%= f.text_area :deal_info, :rows => "6", :cols => "43", :value => @orig_swell.deal_info unless @orig_swell.nil? %>
+	    <%= f.text_area :deal_info, :rows => "6", :cols => "43" if @orig_swell.nil? %><br />
+			<div class="actions">
+		    <%= f.submit %>
+		  </div>
+		</div><!-- end Swell_Desciption div-->
+
+    
+
+    
+  
+<% end %>

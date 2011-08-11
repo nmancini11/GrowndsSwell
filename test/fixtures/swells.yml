@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  deal_info: MyString
+  start_date: 2011-07-06 10:06:15
+  end_date: 2011-07-06 10:06:15
+  radius: 1
+  limit: 1
+  swell_venue_id: 1
+
+two:
+  name: MyString
+  deal_info: MyString
+  start_date: 2011-07-06 10:06:15
+  end_date: 2011-07-06 10:06:15
+  radius: 1
+  limit: 1
+  swell_venue_id: 1

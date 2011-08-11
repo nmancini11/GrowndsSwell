@@ -1,0 +1,47 @@
+<br />
+<br />
+
+<div class="article">
+	<h2 class="title"><%= @swell.name %></h2>
+	<div class="content">
+	<table>
+		<tr>
+		<td width=50%>
+			How many were used<br />
+			Time open / Time used up<br />
+		</td>
+		<td width=50%>
+  <b>Deal info:</b>
+  <%= @swell.deal_info %>
+	<br />
+  <b>Start date:</b>
+  <%= @swell.start_date %>
+	<br />
+  <b>End date:</b>
+  <%= @swell.end_date %>
+	<br />
+  <b>Radius:</b>
+  <%= @swell.radius %>
+	<br />
+  <b>Limit:</b>
+  <%= @swell.limit %>
+	<br />
+  <b>Swell venue:</b>
+  <%= @swell.venue_id %>
+			</td>
+		</tr>
+	</table>
+
+</div>
+<div class="footer">
+	<div class="comments">
+
+<%= link_to 'Edit', edit_swell_path(@swell) %> |
+<%= link_to 'Back', venue_swells_path(@swell.venue_id) %> |
+<%= link_to 'Re-Swell', swell_reswell_path(@swell) %>
+
+		</div>
+	</div>
+</div>
+
+

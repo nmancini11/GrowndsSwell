@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  itinerary_id: 1
+  recipient_id: 1
+  sender_id: 1
+
+two:
+  itinerary_id: 1
+  recipient_id: 1
+  sender_id: 1

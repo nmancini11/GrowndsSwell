@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  child_id: 1
+  parent_id: 1
+  itinerary_id: 1
+
+two:
+  child_id: 1
+  parent_id: 1
+  itinerary_id: 1

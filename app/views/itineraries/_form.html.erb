@@ -1,0 +1,31 @@
+<%= form_for(@itinerary) do |f| %>
+  <% if @itinerary.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@itinerary.errors.count, "error") %> prohibited this itinerary from being saved:</h2>
+
+      <ul>
+      <% @itinerary.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+			
+			<div id= "Venue_Search">
+    		<%= text_field_tag :term, params[:term], :id => "venue-field", :size => 30, :placeholder => "Search for a venue" %>
+			</div>
+
+    	<%= f.hidden_field :venue_id, :id => "venue_id" %>
+
+	  <div class="Event_Time">
+	    <%= f.text_field :start_date, :id => "start_date", :size => 30, :placeholder => "Select a time" %><br />
+	
+	  </div>
+	  <div class="Description">
+	    <%= f.text_area :summary, :rows => 3, :columns => 30, :placeholder => "Enter a Description" %>
+	  </div>
+
+  	<div class="actions">
+	    <%= f.submit %>
+	  </div>
+<% end %>

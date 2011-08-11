@@ -1,0 +1,35 @@
+<h1>Listing users</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email address</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.name %></td>
+    <td><%= user.email %></td>
+
+			<% if current_user.friends_with?(user) %>
+			<td><%= link_to "Profile", user %></td>
+			<% elsif current_user.requested?(user) %>	
+				<td><%= link_to "cancel", unfriend_path(:id => current_user.friendships.friended_user(user)[0]), :method => :delete %></td>
+			<% elsif current_user.pending?(user) %>
+				<td><%= link_to "accept", accept_path(:id => get_friendship_with_user_id(user)), :method => :put %>
+				<%= link_to "deny", unfriend_path(:id => get_friendship_with_user_id(user)), :method => :delete %></td>
+			<% else %>
+				<td><%= link_to "Add Friend", friend_path(:friend_id => user), :method => :post %></td>
+		<% end %>
+		
+		
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New User', new_user_path %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  venue_id: 1
+  day: 1
+  open_time: 2011-07-12 21:00:27
+  close_time: 2011-07-12 21:00:27
+
+two:
+  venue_id: 1
+  day: 1
+  open_time: 2011-07-12 21:00:27
+  close_time: 2011-07-12 21:00:27
